@@ -33,7 +33,7 @@ La organización de paquetes es la siguiente:
 ```
 com.inditex.pricing
 ├── application
-│   └── PriceQueryService.java       // Lógica de aplicación que consulta precios
+│   └── PriceService.java       // Lógica de aplicación que consulta precios
 ├── domain
 │   ├── Price.java                   // Modelo de dominio
 │   └── ports
@@ -45,8 +45,16 @@ com.inditex.pricing
 │   │   ├── PriceJpaEntity.java             // Entidad JPA para la tabla PRICES
 │   │   └── PriceJpaRepository.java         // Repositorio Spring Data JPA
 │   └── web
-│       └── PriceController.java            // Controlador REST que expone el endpoint
-└── PricingApplication.java           // Clase principal que inicia la aplicación Spring Boot
+│   |    └── PriceController.java            // Controlador REST que expone el endpoint
+|   |
+|   └── config
+│   |    └── JacksonConfig.java              //configuracioens dto 
+|   |    └── ModelMapperConfig.java          // configuraciones mapper
+|   └── Mapper
+│       └── PriceMapper.java              //mappa de objetos
+|       
+|    
+└── InditexApplication.java           // Clase principal que inicia la aplicación Spring Boot
 ```
 
 Además, se incluyen los siguientes archivos de configuración y datos:
